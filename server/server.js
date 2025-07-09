@@ -49,8 +49,14 @@ app.use("/api/shop/order", shopOrderRouter);
 app.use("/api/shop/search", shopSearchRouter);
 app.use("/api/shop/review", shopReviewRouter);
 app.use("/api/common/feature", commonFeatureRouter);
+
 app.get("/api/health", (req, res) => {
   res.send("Backend is working ✅");
+});
+
+// Optional root route
+app.get("/", (req, res) => {
+  res.send("API Root. Backend is live ✅");
 });
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
